@@ -10,5 +10,9 @@ bench: $(OBJ)
 	gcc -o $@ $^
 
 .PHONY: clean
+
+run:
+	./bench -a
+	
 clean:
 	rm -f bench_main.o benchmark.o arrays.o bench
