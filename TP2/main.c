@@ -32,6 +32,7 @@ void usage() {
 	printf("  --exo5               Run tests for exo5 functions.\n");
 	printf("  --longest_incr_iter  Run tests for longest_incr_iter function.\n");
 	printf("  --first_incr         Run tests for first_incr function.\n");
+	printf("  --longest_incr_rec  Run tests for longest_incr_rec function.\n");
 	printf("\n");
 
 
