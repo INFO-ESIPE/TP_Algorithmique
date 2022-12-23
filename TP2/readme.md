@@ -2,7 +2,7 @@
 
 ### Lancer le programme
 Pour compiler : lancez `$make`
-Pour tester : `$make run`
+Pour tester : `$./bench -a`
 
 ### Options de lancement possible :
 ```bash
