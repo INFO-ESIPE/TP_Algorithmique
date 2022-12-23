@@ -1,10 +1,12 @@
-TP2 d'algorithmique - Max Ducoudré
+# TP2 d'algorithmique - Max Ducoudré
 
-Pour compiler : lancez $make
+### Lancer le programme
+Pour compiler : lancez `$make`
+Pour tester : `$make run`
 
-Pour tester : ($./bench -a)
-
-Usage: bench [options]
+### Options de lancement possible :
+```bash
+Usage: ./bench [options]
   -a                   Run all tests.
 
   --exo1               Run tests for exo1 functions.
@@ -26,3 +28,4 @@ Usage: bench [options]
   --longest_incr_iter  Run tests for longest_incr_iter function.
   --first_incr         Run tests for first_incr function.
   --longest_incr_rec  Run tests for longest_incr_rec function.
+```

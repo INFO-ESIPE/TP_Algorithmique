@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "ex1.h"
-#include "ex2.h"
+#include "exo.h"
+
 
 int func_count = 0;
 int func_max = 8;

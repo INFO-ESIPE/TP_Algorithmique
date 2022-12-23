@@ -141,6 +141,9 @@ int first_incr(int t[], int lo, int hi)
 /* Fonction qui renvoie la longueur de la plus longue suite croissante dans un tableau t (récursive) */
 int longest_incr_rec(int t[], int lo, int hi)
 {
-
-	return 0;
+	int taille = first_incr(t, lo, hi);
+	if(taille > first_incr(t, lo+taille, hi))
+		return taille;
+	else
+		return longest_incr_rec(t, lo+taille, hi);
 }
