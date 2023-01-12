@@ -110,7 +110,7 @@ void add_mines(grid *g, int n) {
  */
 int uncover(grid *g, cell *c) {
 	
-	int uncovered_count = 0;
+	int uncovered_count = 1;
 
 	/*On vérifie si la case est jouable */
 	if(c->visible == 1 || c->marked == 1)
@@ -134,25 +134,18 @@ int uncover(grid *g, cell *c) {
 			uncovered_count += uncover(g, &g->cells[c->x_pos+1][c->y_pos]);
 		if(c->x_pos-1 >= 0)
 			uncovered_count += uncover(g, &g->cells[c->x_pos-1][c->y_pos]);
-
 		if(c->y_pos+1 < g->y_size)
 			uncovered_count += uncover(g, &g->cells[c->x_pos][c->y_pos+1]);
 		if(c->y_pos-1 >= 0)
 			uncovered_count += uncover(g, &g->cells[c->x_pos][c->y_pos-1]);
-
 		if(c->x_pos+1 < g->x_size && c->y_pos+1 < g->y_size)
 			uncovered_count += uncover(g, &g->cells[c->x_pos+1][c->y_pos+1]);
-
 		if(c->x_pos-1 >= 0 && c->y_pos-1 >= 0)
 			uncovered_count += uncover(g, &g->cells[c->x_pos-1][c->y_pos-1]);
-
 		if(c->x_pos-1 >= 0 && c->y_pos+1 < g->y_size)
 			uncovered_count += uncover(g, &g->cells[c->x_pos-1][c->y_pos+1]);
-
 		if(c->x_pos+1 < g->x_size && c->y_pos-1 >= 0)
 			uncovered_count += uncover(g, &g->cells[c->x_pos+1][c->y_pos-1]);
-
-	
 
 		return uncovered_count;
 	}

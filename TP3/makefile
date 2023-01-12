@@ -3,7 +3,7 @@ CFLAGS=-Wall -ansi -pedantic
 CFLAGSP=-Wall -ansi
 MLVFLAGS=-lMLV -lm
 LDFLAGS=
-OBJ=build/main.o build/exo1.o build/frame.o build/grid.o build/draw.o build/sweeper.o build/draw_plate.o build/queen_chess.o
+OBJ=build/main.o build/exo1.o build/frame.o build/grid.o build/draw.o build/sweeper.o build/draw_plate.o build/queen_chess.o build/queen_algo.o
 
 all: $(OBJ)
 	$(CC) -o minesweeper $(OBJ) $(CFLAGS) $(MLVFLAGS)
@@ -29,11 +29,15 @@ build/grid.o:exo2_Sweeper/grid.c exo2_Sweeper/draw.h
 	$(CC) -c exo2_Sweeper/grid.c -o build/grid.o $(CFLAGSP) $(MLVFLAGS)
 
 
-build/queen_chess.o: exo4_Reines/queen_chess.c exo4_Reines/draw_plate.h
+build/queen_chess.o: exo4_Reines/queen_chess.c exo4_Reines/draw_plate.h exo4_Reines/queen_algo.h
 	$(CC) -c exo4_Reines/queen_chess.c -o build/queen_chess.o $(CFLAGSP) 
 
 build/draw_plate.o: exo4_Reines/draw_plate.c exo4_Reines/queen_chess.h
 	$(CC) -c exo4_Reines/draw_plate.c -o build/draw_plate.o $(CFLAGSP) 
+
+build/queen_algo.o: exo4_Reines/queen_algo.c exo4_Reines/queen_chess.h exo4_Reines/draw_plate.h
+	$(CC) -c exo4_Reines/queen_algo.c -o build/queen_algo.o $(CFLAGSP) 
+
 
 run:
 	./minesweeper -a

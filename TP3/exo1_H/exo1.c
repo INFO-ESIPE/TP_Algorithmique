@@ -27,6 +27,7 @@ void drawH(int x, int y, int width)
 		MLV_draw_line(x+width/2, y-width/2, x+width/2, y+width/2, LINE_COLOR);
 
 		MLV_wait_milliseconds(50); /*Permet d'afficher les H au fur et à mesure */
+		MLV_update_window();
 
 		/*Dessin des 4 petits H*/
 		drawH(x-width/2, y-width/2, width/2);
@@ -34,7 +35,6 @@ void drawH(int x, int y, int width)
 		drawH(x-width/2, y+width/2, width/2);
 		drawH(x+width/2, y+width/2, width/2);
 
-		MLV_update_window();
 	}
 }
 

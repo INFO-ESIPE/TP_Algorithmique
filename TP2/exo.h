@@ -16,8 +16,13 @@
 	int sum_digits_iter(int n); 
 	int sum_digits_rec(int n);
 
+	struct SubArray {
+		int index;
+		int size;
+	};
+	
 	int longest_incr_iter(int t[], int lo, int hi);
 	int first_incr(int t[], int lo, int hi);
-	int longest_incr_rec(int t[], int lo, int hi);
+	int longest_incr_rec(int t[], int lo, int hi, struct SubArray subArray);
 
 #endif 

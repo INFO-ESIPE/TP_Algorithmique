@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "exo.h"
 
 /*Renvoi 1 si la chaîne de caractère str entre l'indice lo et li est un palindrome, sinon 0*/
 int palindrome_rec(char str[], int lo, int hi) 
@@ -138,12 +138,21 @@ int first_incr(int t[], int lo, int hi)
 	return lenght;
 }
 
+
+
 /* Fonction qui renvoie la longueur de la plus longue suite croissante dans un tableau t (récursive) */
-int longest_incr_rec(int t[], int lo, int hi)
+int longest_incr_rec(int t[], int lo, int hi, struct SubArray subArray)
 {
+
 	int taille = first_incr(t, lo, hi);
 	if(taille > first_incr(t, lo+taille, hi))
+	{
+		subArray.index = lo;
+		subArray.size = taille;
 		return taille;
+	}
 	else
-		return longest_incr_rec(t, lo+taille, hi);
+	{
+		return longest_incr_rec(t, lo+taille, hi, subArray);
+	}
 }

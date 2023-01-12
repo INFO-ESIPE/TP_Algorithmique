@@ -465,7 +465,11 @@ void test_first_incr()
 /* TEST longest_incr_iter */
 int print_longest_incr_rec(int t[], int lo, int hi, int expected)
 {
-	int result = longest_incr_rec(t, lo, hi);
+	struct SubArray subArray;
+	subArray.index = 0;
+	subArray.size = 0;
+
+	int result = longest_incr_rec(t, lo, hi, subArray);
 
 	printf("  longest_incr_rec(");
 	print_array(t, hi);
@@ -473,7 +477,8 @@ int print_longest_incr_rec(int t[], int lo, int hi, int expected)
 	printf(", %d, %d);\n",lo,hi);
 
 	printf("  result   = %d\n  expected = %d\n", result, expected);
-		
+	printf("SubArray->index = %d | SubArray->size = %d\n", subArray.index, subArray.size);
+
 	if(result == expected) {
 		printf("  -> TEST SUCESS\n");
 		return 1;
@@ -492,6 +497,7 @@ void test_longest_incr_rec()
 
 	printf("\n----TEST LONGEST INCREASE (recursive)----\n");
 	test_count++;
+
 	printf("TEST %d/%d :\n", test_count, test_max);
 	int array_test_1[] = {1, 2, 3, 2, 4, 6, 8, 3};
 	sucessCount+=print_longest_incr_rec(array_test_1, 0, 7, 4);

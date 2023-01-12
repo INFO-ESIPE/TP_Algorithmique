@@ -78,7 +78,7 @@ int main(int argc, char* argv[])
 		} else if (strcmp(argv[1], "--sum_digits_rec") == 0) {
 			test_sum_digits_rec();
 			return EXIT_SUCCESS;
-		} else if (strcmp(argv[1], "--exo4") == 0) {
+		} else if (strcmp(argv[1], "--exo5") == 0) {
 			test_longest_incr_iter();
 			test_first_incr();
 			test_longest_incr_rec();
