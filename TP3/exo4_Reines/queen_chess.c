@@ -19,12 +19,9 @@ void start_chess_queen(int queen_count, int grid_size)
     int possible_solutions = 0;
     drawChessFrame();
 
-    printf("--Start Queen Algorithm with %d queens and %dx%d cells--\n", queen_count, grid_size,grid_size);
-
     plate_data = createEmptyPlate(grid_size, queen_count);
     possible_solutions = queens(plate_data.queen_board, plate_data.plate_size, 0, plate_data);
-    printf("There is %d combinaisons for %d queens in %dx%d grid !\n", possible_solutions, queen_count, grid_size,grid_size);
-    
+    drawResultText(grid_size, queen_count, possible_solutions);
 
     freeChessFrame(plate_data);    
     freeChessFrame();

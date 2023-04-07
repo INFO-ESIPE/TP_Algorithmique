@@ -16,7 +16,6 @@ void draw_plate(int x, int y, int cell_size, struct PlateData plate_data)
     MLV_resize_image(queen_image, cell_size-4, cell_size-4);
     MLV_draw_filled_rectangle(x,y, cell_size*plate_data.plate_size, cell_size*plate_data.plate_size, CHESS_BACKGROUND_COLOR);
 
-    
     for(i = 0; i < plate_data.plate_size; i++)
     {
         for(j = 0; j < plate_data.plate_size; j++)
@@ -55,6 +54,14 @@ void draw_plate(int x, int y, int cell_size, struct PlateData plate_data)
 
 	MLV_update_window();
 
+}
+
+void drawResultText(int grid_size, int queen_nb, int solution_nb)
+{
+    char text[255];
+    sprintf(text, "There is %d solutions for a %dx%d grid with %d queens !", solution_nb, grid_size,grid_size, queen_nb);
+    MLV_draw_text(CHESS_WIN_WIDTH/3, 2, text, MLV_COLOR_BLACK);
+    MLV_update_window();
 }
 
 void drawChessFrame(){

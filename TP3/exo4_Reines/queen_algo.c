@@ -24,20 +24,17 @@ int current_grid_y_offset = -1;
 
 int queens(int board[], int size, int pos, struct PlateData plate_data) {
 
-	int big_slot_size = (CHESS_WIN_HEIGHT/2)/size;
-	int big_grid_size = big_slot_size*plate_data.plate_size;
-	int little_slot_size = big_slot_size/1.6;
+	int little_slot_size = ((CHESS_WIN_HEIGHT/2)/size)/1.6;
 	int little_grid_size = little_slot_size*plate_data.plate_size;
 	
-	draw_plate(1,(CHESS_WIN_HEIGHT/4), big_slot_size, plate_data);
 	if (pos == size) {
 		if(current_grid_x_offset%3 == 0) {
 			current_grid_y_offset++;
 			current_grid_x_offset=0;
 			};
 		draw_plate(
-			(big_grid_size + 10) + (current_grid_y_offset * (little_grid_size+10)) , 
-			(little_grid_size + 10) * (current_grid_x_offset) + 10, 
+			10+ (current_grid_y_offset * (little_grid_size+10)) , 
+			10+(little_grid_size + 10) * (current_grid_x_offset) + 10, 
 			little_slot_size, plate_data);
 		current_grid_x_offset++;
 

@@ -1,0 +1,13 @@
+Exercice 6 :
+
+Complexité de la fonction enqueue_q :
+Sa complexité est de O(1). En effet, pour ajouter un élément à la liste chaîné, une seule opération est nécéssaire : changer le NEXT du dernier élément par le pointeur de celui à ajouter.
+
+Complexité de la fonction dequeue_q :
+Sa complexité est de O(2). Deux opérations sont nécéssaires, retirer la première chaîne pour la remplacer par la nouvelle. 
+
+Exercice 8 :
+Si l'on modifie les valeurs de N_VENDORS, ARRIVAL_RATE & MEAN_SERVICE_TIME. On obtient des résultats différents.
+S'il reste toujours au moins un vendeur de disponible, la file d'attente est toujours vide et le temps d'attente moyen d'un client correspond à MEAN_SERVICE_TIME (le temps qu'un vendeur met à servir un client).
+Pour garder cet équilibre, on peux augmenter la valeur de N_VENDORS ou baisser la valeur d'ARRIVAL_RATE (la fréquence d'arrivée d'un client).
+Dans le cas contraire, la file d'attente vas accumuler des clients : plus la boulangerie vas fermer tard, plus le temps d'attente augmentera pour chaque clients.

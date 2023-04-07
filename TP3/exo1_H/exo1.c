@@ -16,10 +16,12 @@ void start_exo1_test()
 	freeFrame(5);
 }
 
+
+
 /*Fonction qui dessine un H ayant pour centre x & y et pour taille width*/
 void drawH(int x, int y, int width)
 {
-	if(width > 8)
+	if(width > 4)
 	{
 		/*Dessin du H principal*/
 		MLV_draw_line(x-width/2, y-width/2, x-width/2, y+width/2, LINE_COLOR);
@@ -37,5 +39,3 @@ void drawH(int x, int y, int width)
 
 	}
 }
-
-

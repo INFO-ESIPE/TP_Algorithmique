@@ -25,5 +25,5 @@ struct PlateData;
 void drawChessFrame();
 void freeChessFrame();
 void draw_plate(int x, int y, int cell_size, struct PlateData chess_plate);
-
+void drawResultText(int grid_size, int queen_nb, int solution_nb);
 #endif 
