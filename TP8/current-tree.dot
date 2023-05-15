@@ -1,0 +1,26 @@
+digraph tree {
+  splines=false
+  node [shape=record,height=.1]
+  edge [tailclip=false, arrowtail=dot, dir=both];
+
+  n0x7ffff8e8d460 [label="<left> | <value> 0 | <right>"];
+  n0x7ffff8e8d460:left:c -> n0x7ffff8e8d4a0:value;
+  n0x7ffff8e8d4a0 [label="<left> | <value> 1 | <right>"];
+  n0x7ffff8e8d4a0:left:c -> n0x7ffff8e8d4e0:value;
+  n0x7ffff8e8d4e0 [label="<left> | <value> 4 | <right>"];
+  n0x7ffff8e8d4e0:left:c -> n0x7ffff8e8d520:value;
+  n0x7ffff8e8d520 [label="<left> | <value> 7 | <right>"];
+  n0x7ffff8e8d4a0:right:c -> n0x7ffff8e8d560:value;
+  n0x7ffff8e8d560 [label="<left> | <value> 1 | <right>"];
+  n0x7ffff8e8d560:left:c -> n0x7ffff8e8d5a0:value;
+  n0x7ffff8e8d5a0 [label="<left> | <value> 3 | <right>"];
+  n0x7ffff8e8d460:right:c -> n0x7ffff8e8d5e0:value;
+  n0x7ffff8e8d5e0 [label="<left> | <value> 5 | <right>"];
+  n0x7ffff8e8d5e0:left:c -> n0x7ffff8e8d620:value;
+  n0x7ffff8e8d620 [label="<left> | <value> 3 | <right>"];
+  n0x7ffff8e8d620:left:c -> n0x7ffff8e8d660:value;
+  n0x7ffff8e8d660 [label="<left> | <value> 3 | <right>"];
+  n0x7ffff8e8d5e0:right:c -> n0x7ffff8e8d6a0:value;
+  n0x7ffff8e8d6a0 [label="<left> | <value> 0 | <right>"];
+
+}
